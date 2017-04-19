@@ -1,7 +1,7 @@
-#ifndef LUADEC_AST_H
-#define LUADEC_AST_H
+#ifndef LUADEC_STATEMENT_H
+#define LUADEC_STATEMENT_H
 
-// Abstract syntax tree
+// Abstract syntax tree, Statements tree
 
 #include "StringBuffer.h"
 #include "structs.h"
@@ -23,7 +23,7 @@ enum StatementType_ {
 	JMP_DEST_STMT // virtual statement, mark for JMP destination, some of the statements will be printed as label in 5.2
 };
 
-const char* const stmttype[];
+extern const char* const stmttype[];
 
 typedef struct AstStatement_ AstStatement;
 struct AstStatement_ {
@@ -56,4 +56,4 @@ void PrintAstSub(AstStatement* blockstmt, StringBuffer* buff, int indent);
 
 void AddToStatement(AstStatement* stmt, AstStatement* sub);
 
-#endif // #ifndef LUADEC_AST_H
+#endif // #ifndef LUADEC_STATEMENT_H
